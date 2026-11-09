@@ -1,26 +1,111 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-jost);
+  --font-serif: var(--font-cormorant);
+  --font-heading: var(--font-cormorant);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Brand palette */
+  --color-ivory: #fbf8f3;
+  --color-cream: #f6efe6;
+  --color-sand: #ece1d3;
+  --color-taupe: #b9a693;
+  --color-wine: #6b1e36;
+  --color-wine-dark: #4f1426;
+  --color-blush: #f3e1df;
+  --color-rose: #d9a5a5;
+  --color-ink: #2b1d21;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #fbf8f3;
+  --foreground: #2b1d21;
+  --card: #fffdfa;
+  --card-foreground: #2b1d21;
+  --popover: #fffdfa;
+  --popover-foreground: #2b1d21;
+  --primary: #6b1e36;
+  --primary-foreground: #fbf8f3;
+  --secondary: #f3e1df;
+  --secondary-foreground: #4f1426;
+  --muted: #f3ece3;
+  --muted-foreground: #7a6a66;
+  --accent: #f6efe6;
+  --accent-foreground: #4f1426;
+  --destructive: #b42318;
+  --border: #e7ddd2;
+  --input: #e2d6c8;
+  --ring: #a8566d;
+  --chart-1: #6b1e36;
+  --chart-2: #d9a5a5;
+  --chart-3: #b9a693;
+  --chart-4: #a3b18a;
+  --chart-5: #1f2a44;
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans scroll-smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif tracking-tight;
+  }
+  ::selection {
+    @apply bg-wine text-ivory;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .eyebrow {
+    @apply text-[0.7rem] font-medium tracking-[0.28em] text-wine uppercase;
+  }
+  .grain {
+    background-image: radial-gradient(rgba(107, 30, 54, 0.04) 1px, transparent 1px);
+    background-size: 18px 18px;
+  }
 }

@@ -14,7 +14,7 @@ export async function listResponses(): Promise<SurveyResponse[]> {
   return [...all].sort((a, b) => b.created_at.localeCompare(a.created_at));
 }
 
-export class SubmissionError extends Error {}
+export class SubmissionError extends Error { }
 
 /**
  * Stores a validated survey. Idempotent on submission_id: retries or double
@@ -43,43 +43,43 @@ export async function addResponse(input: SurveyData): Promise<{ id: string; dupl
     FILE,
     empty,
     (responses) => {
-    const existing = responses.find((r) => r.submission_id === input.submission_id);
-    if (existing) return { data: responses, result: { id: existing.id, duplicate: true } };
+      const existing = responses.find((r) => r.submission_id === input.submission_id);
+      if (existing) return { data: responses, result: { id: existing.id, duplicate: true } };
 
-    const response: SurveyResponse = {
-      id: randomUUID(),
-      submission_id: input.submission_id,
-      full_name: input.full_name.trim(),
-      mobile_number: mobile,
-      fashion_styles: input.fashion_styles,
-      fabric_preferences: input.fabric_preferences,
-      comfort_preferences: input.comfort_preferences,
-      preferred_fit: input.preferred_fit,
-      clothing_size: input.clothing_size,
-      price_range: input.price_range,
-      purchase_intention: input.purchase_intention,
-      shopping_channels: input.shopping_channels,
-      collection_preferences: input.collection_preferences,
-      other_details: otherDetails,
-      feedback: clean(input.feedback) ?? null,
-      launch_updates_consent: input.launch_updates_consent,
-      selected_designs: selected.map((d) => {
-        const design = activeDesigns.get(d.design_id)!;
-        return {
-          clothing_design_id: d.design_id,
-          design_name: design.design_name,
-          category: design.category,
-          is_favorite: d.is_favorite,
-          preferred_colors: d.colors,
-          other_color: d.colors.includes("other") ? (clean(d.other_color) ?? null) : null,
-          customization_preferences: Object.fromEntries(
-            Object.entries(d.customization).filter(([, v]) => !!v),
-          ),
-        };
-      }),
-      created_at: new Date().toISOString(),
-    };
-    return { data: [...responses, response], result: { id: response.id, duplicate: false } };
-  });
+      const response: SurveyResponse = {
+        id: randomUUID(),
+        submission_id: input.submission_id,
+        full_name: input.full_name.trim(),
+        mobile_number: mobile,
+        fashion_styles: input.fashion_styles,
+        fabric_preferences: input.fabric_preferences,
+        comfort_preferences: input.comfort_preferences,
+        preferred_fit: input.preferred_fit,
+        clothing_size: input.clothing_size,
+        price_range: input.price_range || null,
+        purchase_intention: input.purchase_intention || null,
+        shopping_channels: input.shopping_channels,
+        collection_preferences: input.collection_preferences,
+        other_details: otherDetails,
+        feedback: clean(input.feedback) ?? null,
+        // launch_updates_consent: input.launch_updates_consent,
+        selected_designs: selected.map((d) => {
+          const design = activeDesigns.get(d.design_id)!;
+          return {
+            clothing_design_id: d.design_id,
+            design_name: design.design_name,
+            category: design.category,
+            is_favorite: d.is_favorite,
+            preferred_colors: d.colors,
+            other_color: d.colors.includes("other") ? (clean(d.other_color) ?? null) : null,
+            customization_preferences: Object.fromEntries(
+              Object.entries(d.customization).filter(([, v]) => !!v),
+            ),
+          };
+        }),
+        created_at: new Date().toISOString(),
+      };
+      return { data: [...responses, response], result: { id: response.id, duplicate: false } };
+    });
 }
 

@@ -1,0 +1,254 @@
+[
+  {
+    "id": "res-001",
+    "submission_id": "a1b2c3d4-e5f6-4a1b-8c2d-3e4f5a6b7c8d",
+    "full_name": "Nethmi Fernando",
+    "mobile_number": "+94771234567",
+    "fashion_styles": [
+      "minimal_elegant",
+      "office_wear"
+    ],
+    "fabric_preferences": [
+      "linen",
+      "cotton",
+      "satin"
+    ],
+    "comfort_preferences": [
+      "comfort",
+      "breathability",
+      "quality"
+    ],
+    "preferred_fit": "regular",
+    "clothing_size": "m",
+    "price_range": "3000_3500",
+    "purchase_intention": "definitely",
+    "shopping_channels": [
+      "social",
+      "online_stores"
+    ],
+    "collection_preferences": [
+      "blouses",
+      "dresses",
+      "office_wear"
+    ],
+    "other_details": {},
+    "feedback": "Please keep linen options for Colombo humid weather! Love the burgundy satin wrap.",
+    "launch_updates_consent": true,
+    "selected_designs": [
+      {
+        "clothing_design_id": "d05-burgundy-satin-wrap-blouse",
+        "design_name": "Burgundy Satin Wrap Blouse",
+        "category": "blouses",
+        "is_favorite": true,
+        "preferred_colors": [
+          "burgundy",
+          "black"
+        ],
+        "other_color": null,
+        "customization_preferences": {
+          "sleeve": "long",
+          "neckline": "v_neck"
+        }
+      },
+      {
+        "clothing_design_id": "d02-sage-linen-camisole",
+        "design_name": "Sage Linen Camisole",
+        "category": "casual_tops",
+        "is_favorite": false,
+        "preferred_colors": [
+          "sage_green",
+          "white",
+          "beige"
+        ],
+        "other_color": null,
+        "customization_preferences": {
+          "length": "regular"
+        }
+      },
+      {
+        "clothing_design_id": "d10-sage-tiered-maxi-dress",
+        "design_name": "Sage Tiered Maxi Dress",
+        "category": "dresses",
+        "is_favorite": true,
+        "preferred_colors": [
+          "sage_green",
+          "dusty_pink"
+        ],
+        "other_color": null,
+        "customization_preferences": {
+          "sleeve": "short",
+          "length": "maxi"
+        }
+      }
+    ],
+    "created_at": "2026-11-09T04:27:56.481Z"
+  },
+  {
+    "id": "res-002",
+    "submission_id": "b2c3d4e5-f6a1-4b2c-9d3e-4f5a6b7c8d9e",
+    "full_name": "Dilini Perera",
+    "mobile_number": "+94719876543",
+    "fashion_styles": [
+      "casual_everyday",
+      "minimal_elegant"
+    ],
+    "fabric_preferences": [
+      "cotton",
+      "ribbed_knit"
+    ],
+    "comfort_preferences": [
+      "comfort",
+      "durability",
+      "affordable_price"
+    ],
+    "preferred_fit": "relaxed",
+    "clothing_size": "s",
+    "price_range": "2500_3000",
+    "purchase_intention": "probably",
+    "shopping_channels": [
+      "social",
+      "malls"
+    ],
+    "collection_preferences": [
+      "casual_tops",
+      "oversized_shirts"
+    ],
+    "other_details": {},
+    "feedback": "The ribbed tee and striped oversized shirt look super comfy for weekend outings.",
+    "launch_updates_consent": true,
+    "selected_designs": [
+      {
+        "clothing_design_id": "d01-ivory-ribbed-knit-tee",
+        "design_name": "Ivory Ribbed Knit Tee",
+        "category": "casual_tops",
+        "is_favorite": true,
+        "preferred_colors": [
+          "white",
+          "beige",
+          "black"
+        ],
+        "other_color": null,
+        "customization_preferences": {
+          "sleeve": "short",
+          "neckline": "round"
+        }
+      },
+      {
+        "clothing_design_id": "d04-striped-oversized-shirt",
+        "design_name": "Striped Oversized Shirt",
+        "category": "casual_tops",
+        "is_favorite": true,
+        "preferred_colors": [
+          "navy_blue",
+          "white"
+        ],
+        "other_color": null,
+        "customization_preferences": {
+          "sleeve": "long",
+          "length": "regular"
+        }
+      }
+    ],
+    "created_at": "2026-11-09T06:27:56.483Z"
+  },
+  {
+    "id": "res-003",
+    "submission_id": "c3d4e5f6-a1b2-4c3d-8e4f-5a6b7c8d9e0f",
+    "full_name": "Sachini Wickramasinghe",
+    "mobile_number": "+94765554321",
+    "fashion_styles": [
+      "trendy",
+      "office_wear"
+    ],
+    "fabric_preferences": [
+      "satin",
+      "linen"
+    ],
+    "comfort_preferences": [
+      "appearance",
+      "quality",
+      "breathability"
+    ],
+    "preferred_fit": "regular",
+    "clothing_size": "m",
+    "price_range": "3500_4500",
+    "purchase_intention": "definitely",
+    "shopping_channels": [
+      "online_stores",
+      "boutiques"
+    ],
+    "collection_preferences": [
+      "dresses",
+      "blouses"
+    ],
+    "other_details": {},
+    "feedback": "Obsessed with the black slip midi dress! Will definitely order when live.",
+    "launch_updates_consent": true,
+    "selected_designs": [
+      {
+        "clothing_design_id": "d09-black-satin-slip-midi",
+        "design_name": "Black Satin Slip Midi Dress",
+        "category": "dresses",
+        "is_favorite": true,
+        "preferred_colors": [
+          "black",
+          "burgundy"
+        ],
+        "other_color": null,
+        "customization_preferences": {
+          "length": "midi"
+        }
+      },
+      {
+        "clothing_design_id": "d08-navy-bow-office-blouse",
+        "design_name": "Navy Bow Office Blouse",
+        "category": "blouses",
+        "is_favorite": false,
+        "preferred_colors": [
+          "navy_blue",
+          "white"
+        ],
+        "other_color": null,
+        "customization_preferences": {
+          "sleeve": "long"
+        }
+      }
+    ],
+    "created_at": "2026-11-09T07:27:56.483Z"
+  },
+  {
+    "id": "43f9e033-d110-4cb6-91c0-3b1b91f22c67",
+    "submission_id": "4443dfe7-80d4-4534-bf7a-b77c8a0260bd",
+    "full_name": "Kanchana Madhuranga",
+    "mobile_number": "+94760570695",
+    "fashion_styles": [],
+    "fabric_preferences": [
+      "cotton"
+    ],
+    "comfort_preferences": [],
+    "preferred_fit": "regular",
+    "clothing_size": "xl",
+    "price_range": null,
+    "purchase_intention": null,
+    "shopping_channels": [],
+    "collection_preferences": [
+      "casual_tops"
+    ],
+    "other_details": {},
+    "feedback": null,
+    "selected_designs": [
+      {
+        "clothing_design_id": "d07-beige-linen-button-down",
+        "design_name": "Beige Linen Button-Down",
+        "category": "blouses",
+        "is_favorite": false,
+        "preferred_colors": [
+          "beige"
+        ],
+        "other_color": null,
+        "customization_preferences": {}
+      }
+    ],
+    "created_at": "2026-11-09T14:23:14.709Z"
+  }
+]

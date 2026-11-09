@@ -38,7 +38,7 @@ export type SurveyAnalytics = {
     mostPopularPriceRange: string;
     mostPreferredSize: string;
     highIntentRate: number; // percentage with definitely or probably
-    optInRate: number; // percentage opted in for launch updates
+    // optInRate: number; // percentage opted in for launch updates
   };
   designPopularity: DesignPopularity[];
   categoryBreakdown: MetricCount[];
@@ -64,7 +64,7 @@ export function computeAnalytics(responses: SurveyResponse[]): SurveyAnalytics {
         mostPopularPriceRange: "—",
         mostPreferredSize: "—",
         highIntentRate: 0,
-        optInRate: 0,
+        // optInRate: 0,
       },
       designPopularity: [],
       categoryBreakdown: [],
@@ -144,7 +144,9 @@ export function computeAnalytics(responses: SurveyResponse[]): SurveyAnalytics {
   // 4. Price range
   const priceCountMap = new Map<string, number>();
   for (const r of responses) {
-    priceCountMap.set(r.price_range, (priceCountMap.get(r.price_range) ?? 0) + 1);
+    if (r.price_range) {
+      priceCountMap.set(r.price_range, (priceCountMap.get(r.price_range) ?? 0) + 1);
+    }
   }
   const priceRangeBreakdown: MetricCount[] = PRICE_RANGES.map((p) => {
     const count = priceCountMap.get(p.value) ?? 0;
@@ -159,7 +161,9 @@ export function computeAnalytics(responses: SurveyResponse[]): SurveyAnalytics {
   // 5. Purchase intention
   const intentCountMap = new Map<string, number>();
   for (const r of responses) {
-    intentCountMap.set(r.purchase_intention, (intentCountMap.get(r.purchase_intention) ?? 0) + 1);
+    if (r.purchase_intention) {
+      intentCountMap.set(r.purchase_intention, (intentCountMap.get(r.purchase_intention) ?? 0) + 1);
+    }
   }
   const purchaseIntentionBreakdown: MetricCount[] = PURCHASE_INTENTIONS.map((pi) => {
     const count = intentCountMap.get(pi.value) ?? 0;
@@ -244,8 +248,8 @@ export function computeAnalytics(responses: SurveyResponse[]): SurveyAnalytics {
     (intentCountMap.get("definitely") ?? 0) + (intentCountMap.get("probably") ?? 0);
   const highIntentRate = Math.round((highIntentCount / total) * 100);
 
-  const optInCount = responses.filter((r) => r.launch_updates_consent).length;
-  const optInRate = Math.round((optInCount / total) * 100);
+  // const optInCount = responses.filter((r) => r.launch_updates_consent).length;
+  // const optInRate = Math.round((optInCount / total) * 100);
 
   const topDesign = designPopularity[0]?.name ?? "—";
   const topCategory = categoryBreakdown[0]?.label ?? "—";
@@ -261,8 +265,8 @@ export function computeAnalytics(responses: SurveyResponse[]): SurveyAnalytics {
       mostPreferredColor: topColor,
       mostPopularPriceRange: topPriceRange,
       mostPreferredSize: topSize,
-      highIntentRate,
-      optInRate,
+      highIntentRate
+      // optInRate,
     },
     designPopularity,
     categoryBreakdown,

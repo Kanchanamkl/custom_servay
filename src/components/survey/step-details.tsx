@@ -1,7 +1,7 @@
 "use client";
 
 import { ShieldCheck } from "lucide-react";
-import { labelOf, PRICE_RANGES } from "@/lib/survey/options";
+import { labelOf, FITS } from "@/lib/survey/options";
 import { cn } from "@/lib/utils";
 import { SingleChoice } from "./choice-group";
 import { Question } from "./question";
@@ -67,7 +67,7 @@ export function StepDetails({
         <label htmlFor="website">Website</label>
         <input id="website" tabIndex={-1} autoComplete="off" value={honeypot} onChange={(e) => onHoneypotChange(e.target.value)} />
       </div>
-
+      {/* 
       <Question
         id="updates"
         title="Would you like to receive updates about our first collection?"
@@ -81,14 +81,14 @@ export function StepDetails({
           onChange={(v) => update({ launch_updates_consent: v === null ? null : v === "yes" })}
           className="sm:grid-cols-2"
         />
-      </Question>
+      </Question> */}
 
       <div className="rounded-2xl border border-border/80 bg-card p-5">
         <p className="eyebrow !text-muted-foreground">Your summary</p>
         <dl className="mt-3 grid grid-cols-3 gap-4 text-center">
           <Stat label="Designs" value={state.designs.length} />
           <Stat label="Favourites" value={favorites} />
-          <Stat label="Price range" value={state.price_range ? labelOf(PRICE_RANGES, state.price_range).replace("LKR ", "") : "—"} small />
+          <Stat label="Preferred Fit" value={state.preferred_fit ? labelOf(FITS, state.preferred_fit) : "—"} small />
         </dl>
       </div>
     </div>

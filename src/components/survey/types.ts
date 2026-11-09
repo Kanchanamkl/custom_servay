@@ -31,7 +31,7 @@ export type SurveyState = {
   feedback: string;
   full_name: string;
   mobile_number: string;
-  launch_updates_consent: boolean | null;
+  // launch_updates_consent: boolean | null;
 };
 
 export type UpdateState = (patch: Partial<SurveyState> | ((s: SurveyState) => Partial<SurveyState>)) => void;
@@ -77,7 +77,7 @@ export function initialSurveyState(): SurveyState {
     feedback: "",
     full_name: "",
     mobile_number: "",
-    launch_updates_consent: null,
+    // launch_updates_consent: null,
   };
 }
 

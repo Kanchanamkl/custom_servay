@@ -4,14 +4,9 @@ import { COLLECTION_PREFERENCES, SHOPPING_CHANNELS } from "@/lib/survey/options"
 import { MultiChoice } from "./choice-group";
 import { Question } from "./question";
 import type { StepProps } from "./types";
-import { VirtualTryOn } from "./virtual-try-on";
-
 const FEEDBACK_MAX = 2000;
 
-export function StepCollection({ state, update, errors, designs }: StepProps) {
-  const selectedDesigns = state.designs
-    .map((s) => designs.find((d) => d.id === s.design_id))
-    .filter((d): d is (typeof designs)[number] => !!d);
+export function StepCollection({ state, update, errors }: StepProps) {
 
   return (
     <div className="space-y-12">
@@ -45,8 +40,6 @@ export function StepCollection({ state, update, errors, designs }: StepProps) {
           otherPlaceholder="Where else? (optional)"
         />
       </Question>
-
-      {/* <VirtualTryOn designs={selectedDesigns.length ? selectedDesigns : designs} /> */}
 
       <Question id="feedback" title="Any suggestions or feedback for our upcoming collection?" optional error={errors.feedback}>
         <div className="relative">

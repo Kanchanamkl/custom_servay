@@ -1,0 +1,54 @@
+[
+  {
+    "id": "d01-ivory-ribbed-knit-tee",
+    "design_name": "Ivory Ribbed Knit Tee",
+    "description": "Fitted ribbed knit with a soft crew neckline.",
+    "category": "casual_tops",
+    "image_url": "/images/designs/ivory-ribbed-knit-tee.jpg",
+    "estimated_price_min": 2000,
+    "estimated_price_max": 2500,
+    "is_active": true,
+    "sort_order": 10,
+    "created_at": "2026-11-09T00:00:00.000Z",
+    "updated_at": "2026-11-09T00:00:00.000Z"
+  },
+  {
+    "id": "d06-white-puff-sleeve-blouse",
+    "design_name": "White Puff-Sleeve Blouse",
+    "description": "Square neckline and romantic puff sleeves.",
+    "category": "blouses",
+    "image_url": "/images/designs/white-puff-sleeve-blouse.jpg",
+    "estimated_price_min": 2800,
+    "estimated_price_max": 3400,
+    "is_active": true,
+    "sort_order": 60,
+    "created_at": "2026-11-09T00:00:00.000Z",
+    "updated_at": "2026-11-09T00:00:00.000Z"
+  },
+  {
+    "id": "d07-beige-linen-button-down",
+    "design_name": "Beige Linen Button-Down",
+    "description": "Relaxed linen blouse for warm days and office looks.",
+    "category": "blouses",
+    "image_url": "/images/designs/beige-linen-blouse.jpg",
+    "estimated_price_min": 3000,
+    "estimated_price_max": 3600,
+    "is_active": true,
+    "sort_order": 70,
+    "created_at": "2026-11-09T00:00:00.000Z",
+    "updated_at": "2026-11-09T00:00:00.000Z"
+  },
+  {
+    "id": "d08-navy-bow-office-blouse",
+    "design_name": "Navy Bow Office Blouse",
+    "description": "Polished long-sleeve blouse with a soft tie-bow.",
+    "category": "blouses",
+    "image_url": "/images/designs/navy-bow-office-blouse.jpg",
+    "estimated_price_min": 3200,
+    "estimated_price_max": 3900,
+    "is_active": true,
+    "sort_order": 80,
+    "created_at": "2026-11-09T00:00:00.000Z",
+    "updated_at": "2026-11-09T00:00:00.000Z"
+  }
+]

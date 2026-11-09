@@ -69,7 +69,7 @@ export function generateResponsesCsv(responses: SurveyResponse[]): string {
       escapeCsv(r.shopping_channels.map((sc) => labelOf(SHOPPING_CHANNELS, sc)).join("; ")),
       escapeCsv(r.collection_preferences.map((cp) => labelOf(COLLECTION_PREFERENCES, cp)).join("; ")),
       escapeCsv(r.feedback || ""),
-      escapeCsv(r.launch_updates_consent ? "Yes" : "No"),
+      // escapeCsv(r.launch_updates_consent ? "Yes" : "No"),
     ].join(",");
   });
 

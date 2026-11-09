@@ -21,7 +21,7 @@ A modern, mobile-responsive market research web application designed for a Sri L
 ### 2. Admin Panel (`/admin-pannel`)
 - Manually typed route protected by hardcoded credentials:
   - **Username:** `admin`
-  - **Password:** `Elara@2026`
+  - **Password:** `loopz@2027`
   *(Can be customized via `ADMIN_USERNAME` and `ADMIN_PASSWORD` in `.env.local`)*
 - **3 Comprehensive Views:**
   1. **Insights & Analytics:**
@@ -68,7 +68,7 @@ A modern, mobile-responsive market research web application designed for a Sri L
    - **Public Survey:** [http://localhost:3000](http://localhost:3000)
    - **Admin Panel:** [http://localhost:3000/admin-pannel](http://localhost:3000/admin-pannel)
      - Username: `admin`
-     - Password: `Elara@2026`
+     - Password: `loopz@2027`
 
 ---
 

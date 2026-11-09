@@ -44,13 +44,13 @@ export type SurveyResponse = {
   comfort_preferences: string[];
   preferred_fit: string | null;
   clothing_size: string | null;
-  price_range: string;
-  purchase_intention: string;
+  price_range: string | null;
+  purchase_intention: string | null;
   shopping_channels: string[];
   collection_preferences: string[];
   other_details: Record<string, string>;
   feedback: string | null;
-  launch_updates_consent: boolean;
+  // launch_updates_consent: boolean;
   selected_designs: SurveySelectedDesign[];
   created_at: string;
 };

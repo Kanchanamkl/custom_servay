@@ -1,6 +1,6 @@
 "use client";
 
-import { COMFORT_PRIORITIES, FABRICS, FASHION_STYLES } from "@/lib/survey/options";
+import { FABRICS } from "@/lib/survey/options";
 import { MultiChoice } from "./choice-group";
 import { Question } from "./question";
 import type { StepProps } from "./types";
@@ -29,7 +29,7 @@ const FABRIC_TEXTURES: Record<string, React.CSSProperties> = {
 export function StepStyle({ state, update, errors }: StepProps) {
   return (
     <div className="space-y-12">
-      <Question
+      {/* <Question
         id="fashion-styles"
         title="Which fashion styles do you love?"
         hint="Choose as many as you like."
@@ -45,7 +45,7 @@ export function StepStyle({ state, update, errors }: StepProps) {
           onOtherTextChange={(v) => update((s) => ({ other_details: { ...s.other_details, fashion_styles: v } }))}
           otherPlaceholder="Describe your style (optional)"
         />
-      </Question>
+      </Question> */}
 
       <Question id="fabrics" title="Which fabrics do you prefer?" hint="Select all that apply." optional error={errors.fabric_preferences}>
         <MultiChoice
@@ -62,7 +62,7 @@ export function StepStyle({ state, update, errors }: StepProps) {
           otherPlaceholder="Which fabric? (optional)"
         />
       </Question>
-
+      {/* 
       <Question
         id="comfort"
         title="What matters most when choosing clothing?"
@@ -77,7 +77,7 @@ export function StepStyle({ state, update, errors }: StepProps) {
           value={state.comfort_preferences}
           onChange={(comfort_preferences) => update({ comfort_preferences })}
         />
-      </Question>
+      </Question> */}
     </div>
   );
 }

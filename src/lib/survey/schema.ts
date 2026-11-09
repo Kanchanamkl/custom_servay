@@ -48,17 +48,15 @@ export const surveySchema = z.object({
     .array(selectedDesignSchema)
     .min(1, { error: "Please select at least one design" })
     .max(30),
-  fashion_styles: z
-    .array(z.enum(values(FASHION_STYLES)))
-    .min(1, { error: "Choose at least one style" }),
+  // Fashion styles (optional / commented out in survey)
+  fashion_styles: z.array(z.enum(values(FASHION_STYLES))).default([]),
   fabric_preferences: z.array(z.enum(values(FABRICS))).default([]),
   comfort_preferences: z.array(z.enum(values(COMFORT_PRIORITIES))).default([]),
   preferred_fit: z.enum(values(FITS)).nullable().default(null),
   clothing_size: z.enum(values(SIZES)).nullable().default(null),
-  price_range: z.enum(values(PRICE_RANGES), { error: "Please choose a price range" }),
-  purchase_intention: z.enum(values(PURCHASE_INTENTIONS), {
-    error: "Please tell us how likely you are to buy",
-  }),
+  // Price range & purchase intention (optional / commented out in survey)
+  price_range: z.enum(values(PRICE_RANGES)).nullable().optional().default(null),
+  purchase_intention: z.enum(values(PURCHASE_INTENTIONS)).nullable().optional().default(null),
   shopping_channels: z.array(z.enum(values(SHOPPING_CHANNELS))).default([]),
   collection_preferences: z
     .array(z.enum(values(COLLECTION_PREFERENCES)))
@@ -85,7 +83,7 @@ export const surveySchema = z.object({
       error: "Enter a valid Sri Lankan mobile number (e.g. 077 123 4567) or leave blank",
     })
     .default(""),
-  launch_updates_consent: z.boolean({ error: "Please choose Yes or No" }),
+  // launch_updates_consent: z.boolean({ error: "Please choose Yes or No" }),
 });
 
 export type SurveyInput = z.input<typeof surveySchema>;
@@ -95,10 +93,11 @@ export type SurveyData = z.output<typeof surveySchema>;
 export const STEP_FIELDS: (keyof SurveyData)[][] = [
   ["designs"],
   ["designs"],
-  ["fashion_styles", "fabric_preferences", "comfort_preferences", "other_details"],
-  ["price_range", "purchase_intention", "preferred_fit", "clothing_size"],
+  ["fabric_preferences", "comfort_preferences", "preferred_fit", "clothing_size", "other_details"],
   ["collection_preferences", "shopping_channels", "feedback", "other_details"],
-  ["full_name", "mobile_number", "launch_updates_consent"],
+  ["full_name", "mobile_number",
+    // "launch_updates_consent"
+  ],
 ];
 
 export type FieldErrors = Record<string, string>;

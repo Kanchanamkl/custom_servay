@@ -20,9 +20,6 @@
 # production
 /build
 
-# local runtime data (participant responses & uploaded images)
-/data
-
 # misc
 .DS_Store
 *.pem

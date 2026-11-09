@@ -1,6 +1,6 @@
 "use client";
 
-import { useId, useState } from "react";
+import { useState } from "react";
 import { ArrowLeft, ArrowRight, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { submitSurvey } from "@/lib/survey/actions";
@@ -9,16 +9,14 @@ import { StepCollection } from "./step-collection";
 import { StepColors } from "./step-colors";
 import { StepDesigns } from "./step-designs";
 import { StepDetails } from "./step-details";
-import { StepFitPrice } from "./step-fit-price";
-import { StepStyle } from "./step-style";
+import { StepFabricFit } from "./step-fabric-fit";
 import { SurveySuccess } from "./survey-success";
 import { initialSurveyState, toPayload, type PublicDesign, type SurveyState } from "./types";
 
 const STEPS = [
   { title: "Select Designs", subtitle: "Choose the pieces you'd love to wear" },
   { title: "Colours & Details", subtitle: "Customise your selected designs" },
-  { title: "Style & Fabric", subtitle: "Tell us what feels right to you" },
-  { title: "Fit & Price", subtitle: "What you would consider reasonable" },
+  { title: "Fabric & Fit", subtitle: "Tell us your material and fit preferences" },
   { title: "Collection & Ideas", subtitle: "What you want to see next" },
   { title: "Your Details", subtitle: "Where we can keep in touch" },
 ] as const;
@@ -30,7 +28,6 @@ export function SurveyWizard({ designs }: { designs: PublicDesign[] }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [honeypot, setHoneypot] = useState("");
-  const titleId = useId();
 
   const update: (patch: Partial<SurveyState> | ((s: SurveyState) => Partial<SurveyState>)) => void = (patch) => {
     setState((prev) => {
@@ -162,7 +159,7 @@ export function SurveyWizard({ designs }: { designs: PublicDesign[] }) {
           />
         </div>
         <div>
-          <h2 id={titleId} className="font-serif text-3xl font-medium sm:text-4xl">
+          <h2 className="font-serif text-3xl font-medium sm:text-4xl">
             {current.title}
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">{current.subtitle}</p>
@@ -173,10 +170,9 @@ export function SurveyWizard({ designs }: { designs: PublicDesign[] }) {
       <div className="min-h-[380px]">
         {step === 0 && <StepDesigns {...stepProps} />}
         {step === 1 && <StepColors {...stepProps} />}
-        {step === 2 && <StepStyle {...stepProps} />}
-        {step === 3 && <StepFitPrice {...stepProps} />}
-        {step === 4 && <StepCollection {...stepProps} />}
-        {step === 5 && (
+        {step === 2 && <StepFabricFit {...stepProps} />}
+        {step === 3 && <StepCollection {...stepProps} />}
+        {step === 4 && (
           <StepDetails {...stepProps} honeypot={honeypot} onHoneypotChange={setHoneypot} />
         )}
       </div>

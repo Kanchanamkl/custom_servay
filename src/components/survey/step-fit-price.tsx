@@ -1,18 +1,18 @@
 "use client";
 
-import { FITS, PRICE_RANGES, PURCHASE_INTENTIONS, SIZES } from "@/lib/survey/options";
+import { FITS, PRICE_RANGES, SIZES } from "@/lib/survey/options";
 import { cn } from "@/lib/utils";
 import { SingleChoice } from "./choice-group";
 import { Question } from "./question";
 import type { StepProps } from "./types";
 
-const INTENT_DOTS: Record<string, number> = {
+/* const INTENT_DOTS: Record<string, number> = {
   definitely: 5,
   probably: 4,
   not_sure: 3,
   probably_not: 2,
   definitely_not: 1,
-};
+}; */
 
 export function StepFitPrice({ state, update, errors }: StepProps) {
   return (
@@ -50,7 +50,7 @@ export function StepFitPrice({ state, update, errors }: StepProps) {
         </div>
       </Question>
 
-      <Question
+      {/* <Question
         id="purchase-intention"
         title="If your preferred design were available at your selected price, how likely would you be to purchase it?"
         error={errors.purchase_intention}
@@ -72,7 +72,7 @@ export function StepFitPrice({ state, update, errors }: StepProps) {
             </span>
           )}
         />
-      </Question>
+      </Question> */}
 
       <div className="rounded-3xl border border-dashed border-taupe/50 bg-cream/60 p-5 sm:p-8">
         <p className="eyebrow">Optional · Size &amp; fit</p>

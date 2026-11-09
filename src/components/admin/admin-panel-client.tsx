@@ -108,13 +108,13 @@ export function AdminPanelClient({
                 name="password"
                 type="password"
                 required
-                defaultValue="Elara@2026"
+                defaultValue="loopz@2027"
                 className="mt-1 h-11 w-full rounded-xl border border-input bg-background px-3.5 text-sm outline-none transition focus:border-wine/50 focus:ring-2 focus:ring-ring/20"
               />
-              <p className="mt-1.5 text-[0.7rem] text-muted-foreground">
+              {/* <p className="mt-1.5 text-[0.7rem] text-muted-foreground">
                 Default: <code className="bg-sand/60 px-1 py-0.5 rounded text-ink">admin</code> /{" "}
-                <code className="bg-sand/60 px-1 py-0.5 rounded text-ink">Elara@2026</code>
-              </p>
+                <code className="bg-sand/60 px-1 py-0.5 rounded text-ink">loopz@2027</code>
+              </p> */}
             </div>
 
             <button
@@ -170,11 +170,10 @@ export function AdminPanelClient({
             <button
               type="button"
               onClick={() => setActiveTab("analytics")}
-              className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 transition ${
-                activeTab === "analytics"
-                  ? "bg-wine text-ivory shadow-xs"
-                  : "text-muted-foreground hover:text-ink"
-              }`}
+              className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 transition ${activeTab === "analytics"
+                ? "bg-wine text-ivory shadow-xs"
+                : "text-muted-foreground hover:text-ink"
+                }`}
             >
               <BarChart3 className="size-3.5" />
               <span>Insights</span>
@@ -182,11 +181,10 @@ export function AdminPanelClient({
             <button
               type="button"
               onClick={() => setActiveTab("responses")}
-              className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 transition ${
-                activeTab === "responses"
-                  ? "bg-wine text-ivory shadow-xs"
-                  : "text-muted-foreground hover:text-ink"
-              }`}
+              className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 transition ${activeTab === "responses"
+                ? "bg-wine text-ivory shadow-xs"
+                : "text-muted-foreground hover:text-ink"
+                }`}
             >
               <ClipboardList className="size-3.5" />
               <span>Responses ({responses.length})</span>
@@ -194,11 +192,10 @@ export function AdminPanelClient({
             <button
               type="button"
               onClick={() => setActiveTab("designs")}
-              className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 transition ${
-                activeTab === "designs"
-                  ? "bg-wine text-ivory shadow-xs"
-                  : "text-muted-foreground hover:text-ink"
-              }`}
+              className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 transition ${activeTab === "designs"
+                ? "bg-wine text-ivory shadow-xs"
+                : "text-muted-foreground hover:text-ink"
+                }`}
             >
               <Shirt className="size-3.5" />
               <span>Designs ({designs.length})</span>

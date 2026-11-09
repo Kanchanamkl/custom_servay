@@ -11,7 +11,7 @@ import "server-only";
  */
 export const adminConfig = {
   username: process.env.ADMIN_USERNAME || "admin",
-  password: process.env.ADMIN_PASSWORD || "Elara@2026",
+  password: process.env.ADMIN_PASSWORD || "loopz@2027",
   /** Used to sign the admin session cookie. */
   sessionSecret:
     process.env.ADMIN_SESSION_SECRET || "elara-local-session-secret-change-me-7f3a9c1e5b",

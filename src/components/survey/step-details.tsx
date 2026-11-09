@@ -3,14 +3,7 @@
 import { ShieldCheck } from "lucide-react";
 import { labelOf, FITS } from "@/lib/survey/options";
 import { cn } from "@/lib/utils";
-import { SingleChoice } from "./choice-group";
-import { Question } from "./question";
 import type { StepProps } from "./types";
-
-const YES_NO = [
-  { value: "yes", label: "Yes, keep me posted" },
-  { value: "no", label: "No, thank you" },
-] as const;
 
 export function StepDetails({
   state,

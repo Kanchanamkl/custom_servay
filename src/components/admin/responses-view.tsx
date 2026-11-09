@@ -9,7 +9,6 @@ import {
   Heart,
   ChevronLeft,
   ChevronRight,
-  Check,
   X,
 } from "lucide-react";
 import type { SurveyResponse } from "@/lib/data/types";

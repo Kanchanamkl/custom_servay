@@ -23,8 +23,8 @@ export class SubmissionError extends Error {}
 export async function addResponse(input: SurveyData): Promise<{ id: string; duplicate: boolean }> {
   const activeDesigns = new Map((await listDesigns({ activeOnly: true })).map((d) => [d.id, d]));
 
-  const mobile = normalizeMobile(input.mobile_number);
-  if (!mobile) throw new SubmissionError("Invalid mobile number");
+  const mobile = input.mobile_number?.trim() ? (normalizeMobile(input.mobile_number) ?? "") : "";
+  if (input.mobile_number?.trim() && !mobile) throw new SubmissionError("Invalid mobile number");
 
   const seen = new Set<string>();
   const selected = input.designs.filter((d) => !seen.has(d.design_id) && seen.add(d.design_id));

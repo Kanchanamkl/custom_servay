@@ -1,4 +1,4 @@
-# ÉLARA — Women's Fashion Market Research Survey
+# Loopz Clothing — Women's Fashion Market Research Survey
 
 A modern, mobile-responsive market research web application designed for a Sri Lankan women's clothing startup to test demand and customer preferences before purchasing their debut inventory batch.
 

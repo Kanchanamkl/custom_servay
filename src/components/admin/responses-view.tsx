@@ -169,7 +169,7 @@ export function ResponsesView({
                     <tr key={r.id} className="transition-colors hover:bg-muted/40">
                       <td className="px-4 py-3 sm:px-6">
                         <div className="font-medium text-ink">{r.full_name}</div>
-                        <div className="text-xs text-muted-foreground">{r.mobile_number}</div>
+                        <div className="text-xs text-muted-foreground">{r.mobile_number || "—"}</div>
                       </td>
                       <td className="max-w-[240px] px-4 py-3">
                         <div className="flex flex-wrap gap-1">
@@ -300,7 +300,7 @@ function ResponseDetailsModal({
               {response.full_name}
             </h3>
             <p className="text-xs text-muted-foreground">
-              {response.mobile_number} · Submitted {formatDateTime(response.created_at)}
+              {response.mobile_number ? `${response.mobile_number} · ` : ""}Submitted {formatDateTime(response.created_at)}
             </p>
           </div>
         </div>

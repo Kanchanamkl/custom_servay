@@ -45,7 +45,7 @@ export function StepDetails({
             className={inputClass(!!errors.full_name)}
           />
         </Field>
-        <Field id="mobile_number" label="Mobile number" error={errors.mobile_number}>
+        <Field id="mobile_number" label="Mobile number" optional error={errors.mobile_number}>
           <input
             id="mobile_number"
             type="tel"
@@ -102,11 +102,28 @@ function inputClass(invalid: boolean) {
   );
 }
 
-function Field({ id, label, error, children }: { id: string; label: string; error?: string; children: React.ReactNode }) {
+function Field({
+  id,
+  label,
+  error,
+  optional,
+  children,
+}: {
+  id: string;
+  label: string;
+  error?: string;
+  optional?: boolean;
+  children: React.ReactNode;
+}) {
   return (
     <div className="space-y-2" data-error={error ? "true" : undefined}>
       <label htmlFor={id} className="text-sm font-medium">
-        {label} <span className="text-wine">*</span>
+        {label}{" "}
+        {optional ? (
+          <span className="text-xs font-normal text-muted-foreground">(optional)</span>
+        ) : (
+          <span className="text-wine">*</span>
+        )}
       </label>
       {children}
       {error && (

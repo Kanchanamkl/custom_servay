@@ -78,11 +78,13 @@ export const surveySchema = z.object({
     .min(2, { error: "Please enter your full name" })
     .max(120, { error: "Name is too long" }),
   mobile_number: z
-    .string({ error: "Please enter your mobile number" })
+    .string()
     .trim()
-    .refine((v) => normalizeMobile(v) !== null, {
-      error: "Enter a valid Sri Lankan mobile number (e.g. 077 123 4567)",
-    }),
+    .optional()
+    .refine((v) => !v || normalizeMobile(v) !== null, {
+      error: "Enter a valid Sri Lankan mobile number (e.g. 077 123 4567) or leave blank",
+    })
+    .default(""),
   launch_updates_consent: z.boolean({ error: "Please choose Yes or No" }),
 });
 

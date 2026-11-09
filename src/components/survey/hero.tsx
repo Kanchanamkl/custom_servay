@@ -40,7 +40,7 @@ export function Hero({ onStart }: { onStart: () => void }) {
         <div className="relative aspect-[3/2] overflow-hidden rounded-3xl border border-border/70 shadow-lg lg:aspect-[4/5]">
           <Image
             src="/images/hero.jpg"
-            alt="Sri Lankan model wearing ÉLARA burgundy satin blouse and tailored trousers"
+            alt="Sri Lankan model wearing Loopz Clothing burgundy satin blouse and tailored trousers"
             fill
             priority
             sizes="(min-width: 1024px) 45vw, 100vw"

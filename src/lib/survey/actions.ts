@@ -30,6 +30,10 @@ export async function submitSurvey(input: unknown, honeypot?: string): Promise<S
     return { ok: true };
   } catch (err) {
     if (err instanceof SubmissionError) return { ok: false, error: err.message };
+    const msg = err instanceof Error ? err.message : "";
+    if (msg.includes("Persistent cloud storage is required on Vercel")) {
+      return { ok: false, error: msg };
+    }
     const ref = randomUUID().slice(0, 8);
     console.error(`[survey] failed to save submission (ref ${ref})`, err);
     return { ok: false, error: `We couldn't save your answers. Please try again. (ref ${ref})` };

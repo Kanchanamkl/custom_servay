@@ -58,12 +58,20 @@ export async function uploadDesignImageAction(formData: FormData): Promise<{ ok:
     return { ok: false, error: "Only JPG, PNG, and WebP images are allowed" };
   }
 
+  const buffer = Buffer.from(await file.arrayBuffer());
+
+  // On Vercel, the local disk is read-only, so encode as base64 data URL
+  if (process.env.VERCEL) {
+    const base64 = buffer.toString("base64");
+    const dataUrl = `data:${file.type};base64,${base64}`;
+    return { ok: true, url: dataUrl };
+  }
+
   const ext = file.type === "image/png" ? ".png" : file.type === "image/webp" ? ".webp" : ".jpg";
   const filename = `design-${Date.now()}-${randomUUID().slice(0, 8)}${ext}`;
   const uploadDir = path.join(DATA_DIR, "uploads");
 
   await fs.mkdir(uploadDir, { recursive: true });
-  const buffer = Buffer.from(await file.arrayBuffer());
   await fs.writeFile(path.join(uploadDir, filename), buffer);
 
   const publicUrl = `/api/uploads/${filename}`;

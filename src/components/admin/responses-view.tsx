@@ -194,11 +194,10 @@ export function ResponsesView({
                       </td>
                       <td className="px-4 py-3">
                         <span
-                          className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                            isHighIntent
+                          className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-medium ${isHighIntent
                               ? "bg-emerald-100 text-emerald-800"
                               : "bg-muted text-muted-foreground"
-                          }`}
+                            }`}
                         >
                           {intentLabel}
                         </span>
@@ -409,7 +408,7 @@ function ResponseDetailsModal({
             </div>
           )}
 
-          {/* Opt-in status */}
+          {/* Opt-in status
           <div className="flex items-center gap-2 pt-2 text-xs text-muted-foreground">
             {response.launch_updates_consent ? (
               <span className="flex items-center gap-1 font-medium text-emerald-700">
@@ -418,7 +417,7 @@ function ResponseDetailsModal({
             ) : (
               <span>Did not opt in for updates</span>
             )}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
